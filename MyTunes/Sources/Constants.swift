@@ -8,6 +8,6 @@
 import Foundation
 
 struct Constants {
-    static let baseURL = "not indicated"
+    static let baseURL = "https://itunes.apple.com/"
 }
 

@@ -9,8 +9,9 @@ import Foundation
 import UIKit
 
 struct AppDependencies {
+    let iTunesManager: ITunesManagerProtocol
     
     init(backendManager: BackendManager) {
-        
+        iTunesManager = ITunesManager(backendManager: backendManager)
     }
 }

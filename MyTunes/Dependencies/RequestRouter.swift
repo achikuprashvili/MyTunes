@@ -20,12 +20,11 @@ extension RequestRouter {
     func asURLRequest() throws -> URLRequest {
         
         let url = try Constants.baseURL.asURL()
-        var urlRequest = URLRequest(url: url)
-        let httpBody = try! JSONSerialization.data(withJSONObject: parameters as Any, options: .prettyPrinted)
-        urlRequest.httpBody = httpBody
+        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
+        urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
         urlRequest.httpMethod = method.rawValue
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+        urlRequest.addValue("text/javascript", forHTTPHeaderField: "Content-Type")
+        urlRequest.addValue("text/javascript", forHTTPHeaderField: "Accept")
         
         return urlRequest
     }

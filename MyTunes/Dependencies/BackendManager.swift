@@ -29,6 +29,7 @@ class BackendManager: BackendManagerProtocol {
                 }, onError: { (error) in
                     observer.onError(error)
                 }).disposed(by: self.disposeBag)
+//                print(response.result)
             }
             
             return Disposables.create {
@@ -44,15 +45,15 @@ class BackendManager: BackendManagerProtocol {
                     let decodedObject = try JSONDecoder().decode(T.self, from: jsonData)
                     observer.onNext(decodedObject)
                 } catch {
-                    observer.onError(NSError(domain: "parse error", code: 1, userInfo: nil))
+                    print(jsonData)
+                    print(error)
+                    observer.onError(error)
                 }
             }, onError: { (error) in
                 observer.onError(error)
             }).disposed(by: self.disposeBag)
             
-            return Disposables.create {
-            
-            }
+            return Disposables.create { }
         }
     }
     
@@ -74,12 +75,11 @@ class BackendManager: BackendManagerProtocol {
                 }
                 
             case .failure(let error):
+                print(response.error)
                 observer.onError(error)
             }
             
-            return Disposables.create {
-            
-            }
+            return Disposables.create { }
         }
     }
 }

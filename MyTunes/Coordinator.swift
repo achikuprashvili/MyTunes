@@ -23,6 +23,9 @@ class Coordinator {
     func presentInitialScreen(on window: UIWindow) {
         self.window = window
         window.rootViewController = navigationController
+        let trackListRouter = TrackListRouter(dependencies: dependencies)
+        let presentationContext = TrackListRouter.PresentationContext.fromCoordinator
+        trackListRouter.present(on: navigationController, animated: true, context: presentationContext, completion: nil)
         window.makeKeyAndVisible()
     }
 }

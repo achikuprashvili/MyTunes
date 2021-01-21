@@ -8,31 +8,49 @@
 
 /* Begin PBXBuildFile section */
 		79317410405EF7D592670E68 /* Pods_MyTunes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55B30BD0D1B184AF508BCD9 /* Pods_MyTunes.framework */; };
+		9306513025B8BED600C7D8C6 /* MVVMRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9306512F25B8BED600C7D8C6 /* MVVMRouter.swift */; };
+		9306513425B8BEE000C7D8C6 /* MVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9306513325B8BEE000C7D8C6 /* MVVMViewController.swift */; };
+		9306513725B8BEE800C7D8C6 /* MVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9306513625B8BEE800C7D8C6 /* MVVMViewModel.swift */; };
+		9306513B25B8BF5700C7D8C6 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9306513A25B8BF5700C7D8C6 /* UIViewController+Extension.swift */; };
 		930AA1B825B4F7DE00B2C6E7 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AA1B725B4F7DE00B2C6E7 /* AppDependencies.swift */; };
 		930AA1BC25B4F82900B2C6E7 /* BackendManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AA1BB25B4F82900B2C6E7 /* BackendManager.swift */; };
 		930AA1BF25B4F83200B2C6E7 /* RequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AA1BE25B4F83200B2C6E7 /* RequestRouter.swift */; };
 		930AA1C225B4F84800B2C6E7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AA1C125B4F84800B2C6E7 /* Coordinator.swift */; };
+		931157CD25B8C3A20001063D /* ITunesRequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931157CC25B8C3A20001063D /* ITunesRequestRouter.swift */; };
+		931157D025B8C3AE0001063D /* ITunesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931157CF25B8C3AE0001063D /* ITunesManager.swift */; };
+		9311581125B9B8F80001063D /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9311581025B9B8F80001063D /* Track.swift */; };
+		9311581A25B9D3CC0001063D /* TrackList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9311581625B9D3CC0001063D /* TrackList.storyboard */; };
+		9311581B25B9D3CC0001063D /* TrackListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9311581725B9D3CC0001063D /* TrackListRouter.swift */; };
+		9311581C25B9D3CC0001063D /* TrackListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9311581825B9D3CC0001063D /* TrackListVM.swift */; };
+		9311581D25B9D3CC0001063D /* TrackListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9311581925B9D3CC0001063D /* TrackListVC.swift */; };
 		934E4F6C25B4FA8300CE8392 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E4F6B25B4FA8300CE8392 /* Constants.swift */; };
 		9365DAEE25B4EDD70037DA5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9365DAED25B4EDD70037DA5E /* AppDelegate.swift */; };
 		9365DAF025B4EDD70037DA5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9365DAEF25B4EDD70037DA5E /* SceneDelegate.swift */; };
-		9365DAF225B4EDD70037DA5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9365DAF125B4EDD70037DA5E /* ViewController.swift */; };
-		9365DAF525B4EDD70037DA5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9365DAF325B4EDD70037DA5E /* Main.storyboard */; };
 		9365DAF725B4EDD80037DA5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9365DAF625B4EDD80037DA5E /* Assets.xcassets */; };
 		9365DAFA25B4EDD80037DA5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9365DAF825B4EDD80037DA5E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5992E21116DE1B18292DF596 /* Pods-MyTunes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTunes.release.xcconfig"; path = "Target Support Files/Pods-MyTunes/Pods-MyTunes.release.xcconfig"; sourceTree = "<group>"; };
+		9306512F25B8BED600C7D8C6 /* MVVMRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMRouter.swift; sourceTree = "<group>"; };
+		9306513325B8BEE000C7D8C6 /* MVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewController.swift; sourceTree = "<group>"; };
+		9306513625B8BEE800C7D8C6 /* MVVMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewModel.swift; sourceTree = "<group>"; };
+		9306513A25B8BF5700C7D8C6 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		930AA1B725B4F7DE00B2C6E7 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		930AA1BB25B4F82900B2C6E7 /* BackendManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendManager.swift; sourceTree = "<group>"; };
 		930AA1BE25B4F83200B2C6E7 /* RequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRouter.swift; sourceTree = "<group>"; };
 		930AA1C125B4F84800B2C6E7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		931157CC25B8C3A20001063D /* ITunesRequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesRequestRouter.swift; sourceTree = "<group>"; };
+		931157CF25B8C3AE0001063D /* ITunesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesManager.swift; sourceTree = "<group>"; };
+		9311581025B9B8F80001063D /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		9311581625B9D3CC0001063D /* TrackList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrackList.storyboard; sourceTree = "<group>"; };
+		9311581725B9D3CC0001063D /* TrackListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListRouter.swift; sourceTree = "<group>"; };
+		9311581825B9D3CC0001063D /* TrackListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListVM.swift; sourceTree = "<group>"; };
+		9311581925B9D3CC0001063D /* TrackListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListVC.swift; sourceTree = "<group>"; };
 		934E4F6B25B4FA8300CE8392 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9365DAEA25B4EDD70037DA5E /* MyTunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9365DAED25B4EDD70037DA5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9365DAEF25B4EDD70037DA5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9365DAF125B4EDD70037DA5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9365DAF425B4EDD70037DA5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9365DAF625B4EDD80037DA5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9365DAF925B4EDD80037DA5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9365DAFB25B4EDD80037DA5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,9 +78,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9306512E25B8BEC700C7D8C6 /* MVVMBaseProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				9306512F25B8BED600C7D8C6 /* MVVMRouter.swift */,
+				9306513325B8BEE000C7D8C6 /* MVVMViewController.swift */,
+				9306513625B8BEE800C7D8C6 /* MVVMViewModel.swift */,
+			);
+			path = MVVMBaseProtocols;
+			sourceTree = "<group>";
+		};
+		9306513925B8BF4300C7D8C6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9306513A25B8BF5700C7D8C6 /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		930AA1B425B4F7A300B2C6E7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				9311581525B9D3AB0001063D /* TrackList */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -73,6 +110,8 @@
 				930AA1B725B4F7DE00B2C6E7 /* AppDependencies.swift */,
 				930AA1BB25B4F82900B2C6E7 /* BackendManager.swift */,
 				930AA1BE25B4F83200B2C6E7 /* RequestRouter.swift */,
+				9311581025B9B8F80001063D /* Track.swift */,
+				931157CB25B8C3860001063D /* iTunesManager */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -80,9 +119,31 @@
 		930AA1B625B4F7B700B2C6E7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				9306513925B8BF4300C7D8C6 /* Extensions */,
 				934E4F6B25B4FA8300CE8392 /* Constants.swift */,
+				9306512E25B8BEC700C7D8C6 /* MVVMBaseProtocols */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		931157CB25B8C3860001063D /* iTunesManager */ = {
+			isa = PBXGroup;
+			children = (
+				931157CC25B8C3A20001063D /* ITunesRequestRouter.swift */,
+				931157CF25B8C3AE0001063D /* ITunesManager.swift */,
+			);
+			path = iTunesManager;
+			sourceTree = "<group>";
+		};
+		9311581525B9D3AB0001063D /* TrackList */ = {
+			isa = PBXGroup;
+			children = (
+				9311581625B9D3CC0001063D /* TrackList.storyboard */,
+				9311581725B9D3CC0001063D /* TrackListRouter.swift */,
+				9311581825B9D3CC0001063D /* TrackListVM.swift */,
+				9311581925B9D3CC0001063D /* TrackListVC.swift */,
+			);
+			path = TrackList;
 			sourceTree = "<group>";
 		};
 		9365DAE125B4EDD70037DA5E = {
@@ -108,12 +169,10 @@
 			children = (
 				9365DAED25B4EDD70037DA5E /* AppDelegate.swift */,
 				9365DAEF25B4EDD70037DA5E /* SceneDelegate.swift */,
-				9365DAF125B4EDD70037DA5E /* ViewController.swift */,
 				930AA1C125B4F84800B2C6E7 /* Coordinator.swift */,
 				930AA1B625B4F7B700B2C6E7 /* Sources */,
 				930AA1B525B4F7AC00B2C6E7 /* Dependencies */,
 				930AA1B425B4F7A300B2C6E7 /* Scenes */,
-				9365DAF325B4EDD70037DA5E /* Main.storyboard */,
 				9365DAF625B4EDD80037DA5E /* Assets.xcassets */,
 				9365DAF825B4EDD80037DA5E /* LaunchScreen.storyboard */,
 				9365DAFB25B4EDD80037DA5E /* Info.plist */,
@@ -189,9 +248,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9311581A25B9D3CC0001063D /* TrackList.storyboard in Resources */,
 				9365DAFA25B4EDD80037DA5E /* LaunchScreen.storyboard in Resources */,
 				9365DAF725B4EDD80037DA5E /* Assets.xcassets in Resources */,
-				9365DAF525B4EDD70037DA5E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,28 +303,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9311581C25B9D3CC0001063D /* TrackListVM.swift in Sources */,
+				9311581D25B9D3CC0001063D /* TrackListVC.swift in Sources */,
 				930AA1B825B4F7DE00B2C6E7 /* AppDependencies.swift in Sources */,
+				931157D025B8C3AE0001063D /* ITunesManager.swift in Sources */,
+				9311581B25B9D3CC0001063D /* TrackListRouter.swift in Sources */,
+				9306513725B8BEE800C7D8C6 /* MVVMViewModel.swift in Sources */,
 				930AA1BC25B4F82900B2C6E7 /* BackendManager.swift in Sources */,
 				930AA1BF25B4F83200B2C6E7 /* RequestRouter.swift in Sources */,
-				9365DAF225B4EDD70037DA5E /* ViewController.swift in Sources */,
+				9311581125B9B8F80001063D /* Track.swift in Sources */,
+				9306513B25B8BF5700C7D8C6 /* UIViewController+Extension.swift in Sources */,
 				9365DAEE25B4EDD70037DA5E /* AppDelegate.swift in Sources */,
 				9365DAF025B4EDD70037DA5E /* SceneDelegate.swift in Sources */,
+				9306513425B8BEE000C7D8C6 /* MVVMViewController.swift in Sources */,
 				930AA1C225B4F84800B2C6E7 /* Coordinator.swift in Sources */,
 				934E4F6C25B4FA8300CE8392 /* Constants.swift in Sources */,
+				931157CD25B8C3A20001063D /* ITunesRequestRouter.swift in Sources */,
+				9306513025B8BED600C7D8C6 /* MVVMRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9365DAF325B4EDD70037DA5E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9365DAF425B4EDD70037DA5E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9365DAF825B4EDD80037DA5E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -402,7 +462,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8F4FHA58FA;
 				INFOPLIST_FILE = MyTunes/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -423,7 +483,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8F4FHA58FA;
 				INFOPLIST_FILE = MyTunes/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
