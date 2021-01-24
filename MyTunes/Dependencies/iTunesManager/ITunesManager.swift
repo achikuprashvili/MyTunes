@@ -9,10 +9,12 @@ import Foundation
 import RxSwift
 
 protocol ITunesManagerProtocol: class {
-    func getArtists(requestRouter: ITunesRequestRouter) -> Observable<TrackSearchResult>
+    
+    func getTrackList(for artist: String, page: Int, limit: Int) -> Observable<TrackSearchResult>
 }
 
 class ITunesManager: BackendManager {
+    
     let backendManager: BackendManager
     
     required init(backendManager: BackendManager) {
@@ -22,9 +24,10 @@ class ITunesManager: BackendManager {
 
 extension ITunesManager: ITunesManagerProtocol {
     
-    func getArtists(requestRouter: ITunesRequestRouter) -> Observable<TrackSearchResult> {
+    func getTrackList(for artist: String, page: Int, limit: Int) -> Observable<TrackSearchResult> {
+        
         return Observable<TrackSearchResult>.create { observer in
-            
+            let requestRouter = ITunesRequestRouter.getTrackList(artist: artist, page: page, limit: limit)
             self.backendManager.sendDecodableRequest(requestRouter: requestRouter).subscribe { (data) in
                 observer.onNext(data)
             } onError: { (error) in

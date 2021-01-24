@@ -18,9 +18,10 @@ fileprivate enum ParameterKey: String {
 
 enum ITunesRequestRouter: RequestRouter {
     
-    case getArtists(searchText: String, page: Int, limit: Int)
+    case getTrackList(artist: String, page: Int, limit: Int)
     
     var method: HTTPMethod {
+        
         switch self {
         default:
             return .get
@@ -28,6 +29,7 @@ enum ITunesRequestRouter: RequestRouter {
     }
     
     var path: String {
+        
         switch self {
         default:
             return "search"
@@ -37,16 +39,14 @@ enum ITunesRequestRouter: RequestRouter {
     var parameters: Parameters? {
         
         switch self {
-        case .getArtists(let searchText, let page, let limit):
+        case .getTrackList(let artist, let page, let limit):
             return [
-                ParameterKey.term.rawValue: searchText.replacingOccurrences(of: " ", with: "+"),
+                ParameterKey.term.rawValue: artist.replacingOccurrences(of: " ", with: "+"),
                 ParameterKey.page.rawValue: page,
                 ParameterKey.limit.rawValue: limit,
                 ParameterKey.media.rawValue: "music",
                 ParameterKey.attribute.rawValue: "artistTerm"
             ]
         }
-        
     }
-
 }
