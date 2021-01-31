@@ -13,9 +13,12 @@ import RxSwift
 protocol TrackListVMProtocol {
     var tracks: PublishSubject<[TrackCellModel]> { get set }
     var screenState: BehaviorSubject<TrackListScreenState> { get set }
-    
-    func getTracksNextPage()
+    var selectRow: PublishSubject<(IndexPath, TrackCellModel)> { get set}
+
     func getTracks(for artist: String)
+    func playMusic(model: TrackCellModel)
+    func seekTrackTo(time: Int)
+    func playNext()
 }
 
 class TrackListVM: MVVMViewModel {
@@ -24,65 +27,77 @@ class TrackListVM: MVVMViewModel {
     
     var tracks: PublishSubject<[TrackCellModel]> = PublishSubject<[TrackCellModel]>.init()
     var screenState: BehaviorSubject<TrackListScreenState> = BehaviorSubject<TrackListScreenState>.init(value: .loading)
+    var selectRow: PublishSubject<(IndexPath, TrackCellModel)> = PublishSubject<(IndexPath, TrackCellModel)>.init()
     
-    let iTunesManager: ITunesManagerProtocol
-    let disposeBag = DisposeBag()
-    var dataSource = TrackListDataSource()
+    private let iTunesManager: ITunesManagerProtocol
+    private let musicPlayer: MusicPlayerManagerProtocol
+    private var dataSource = TrackListDataSource()
+    private var playingTrackIndex: Int?
+    private var nowPlaying: TrackCellModel?
+    private let disposeBag = DisposeBag()
     
-    init(with router: MVVMRouter, iTunesManager: ITunesManagerProtocol) {
+    init(with router: MVVMRouter, iTunesManager: ITunesManagerProtocol, musicPlayer: MusicPlayerManagerProtocol) {
         self.router = router
         self.iTunesManager = iTunesManager
-        getTracks(for: "2pac")
+        self.musicPlayer = musicPlayer
+      
+        musicPlayer
+            .playNextTrackIfPossible
+            .subscribe { (_) in
+                self.playNext()
+            }.disposed(by: disposeBag)
     }
     
 }
 
 extension TrackListVM: TrackListVMProtocol {
-    
-    func getTracksNextPage() {
-        if dataSource.isLoading {
-            return
+    func playNext() {
+        if let index = playingTrackIndex, index + 1 < dataSource.tracks.count {
+            playingTrackIndex = index + 1
+            playMusic(model: dataSource.tracks[index + 1])
+            selectRow.onNext((IndexPath(row: index + 1, section: 0), dataSource.tracks[index + 1]))
         }
-        
-        screenState.onNext(.loadingMore)
-        fetchTracksFromServer()
+    }
+    
+    func seekTrackTo(time: Int) {
+        musicPlayer.seekToTime(to: time)
     }
     
     func getTracks(for artist: String) {
+        playingTrackIndex = nil
         dataSource.isLoading = true
         dataSource.artist = artist
-        dataSource.page = 0
         dataSource.tracks = []
-        dataSource.shouldLoadMore = true
         screenState.onNext(.loading)
         fetchTracksFromServer()
     }
     
     private func fetchTracksFromServer() {
-        if !dataSource.shouldLoadMore {
-            return
-        }
-        iTunesManager.getTrackList(for: dataSource.artist, page: dataSource.page, limit: dataSource.limit).observeOn(MainScheduler.asyncInstance).subscribe { (result) in
-            
-            self.dataSource.tracks.append(contentsOf: ModelTranslator.createTrackCellModelList(from: result.results))
-            if result.results.count == 0 {
-                self.dataSource.shouldLoadMore = false
-            } else {
-                self.dataSource.page += 1
-            }
-            self.finilizeSearch()
-            
-        } onError: { (error) in
-            
-            self.finilizeSearch()
-            
-        }.disposed(by: disposeBag)
+        iTunesManager
+            .getTrackList(for: dataSource.artist, limit: dataSource.limit)
+            .observeOn(MainScheduler.asyncInstance)
+            .subscribe { (result) in
+                self.dataSource.tracks.append(contentsOf: ModelTranslator.createTrackCellModelList(from: result.results))
+                self.finilizeSearch()
+            } onError: { (error) in
+                self.finilizeSearch()
+            }.disposed(by: disposeBag)
     }
     
     private func finilizeSearch() {
         dataSource.tracks.count == 0 ? screenState.onNext(.empty) : screenState.onNext(.tracks)
         dataSource.isLoading = false
         tracks.onNext(dataSource.tracks)
+    }
+    
+    func playMusic(model: TrackCellModel) {
+        self.nowPlaying = model
+        playingTrackIndex = dataSource
+            .tracks
+            .firstIndex { (track) -> Bool in
+                return model.trackId == track.trackId
+        }
+        musicPlayer.play(track: model)
     }
 }
 
@@ -91,15 +106,12 @@ enum TrackListScreenState {
     case empty
     case loading
     case tracks
-    case loadingMore
 }
 
 struct TrackListDataSource {
     
     var tracks: [TrackCellModel] = []
     var artist: String = ""
-    var page: Int = 0
-    var limit: Int = 20
+    var limit: Int = 25
     var isLoading: Bool = false
-    var shouldLoadMore: Bool = true
 }

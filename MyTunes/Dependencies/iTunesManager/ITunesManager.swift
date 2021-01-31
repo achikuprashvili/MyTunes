@@ -10,7 +10,7 @@ import RxSwift
 
 protocol ITunesManagerProtocol: class {
     
-    func getTrackList(for artist: String, page: Int, limit: Int) -> Observable<TrackSearchResult>
+    func getTrackList(for artist: String, limit: Int) -> Observable<TrackSearchResult>
 }
 
 class ITunesManager: BackendManager {
@@ -24,15 +24,17 @@ class ITunesManager: BackendManager {
 
 extension ITunesManager: ITunesManagerProtocol {
     
-    func getTrackList(for artist: String, page: Int, limit: Int) -> Observable<TrackSearchResult> {
+    func getTrackList(for artist: String, limit: Int) -> Observable<TrackSearchResult> {
         
         return Observable<TrackSearchResult>.create { observer in
-            let requestRouter = ITunesRequestRouter.getTrackList(artist: artist, page: page, limit: limit)
-            self.backendManager.sendDecodableRequest(requestRouter: requestRouter).subscribe { (data) in
-                observer.onNext(data)
-            } onError: { (error) in
-                observer.onError(error)
-            }.disposed(by: self.disposeBag)
+            let requestRouter = ITunesRequestRouter.getTrackList(artist: artist, limit: limit)
+            self.backendManager
+                .sendDecodableRequest(requestRouter: requestRouter)
+                .subscribe { (data) in
+                    observer.onNext(data)
+                } onError: { (error) in
+                    observer.onError(error)
+                }.disposed(by: self.disposeBag)
 
             return Disposables.create { }
         }

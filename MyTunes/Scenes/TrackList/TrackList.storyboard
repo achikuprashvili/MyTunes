@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,22 +17,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jUR-yg-Xvp">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADl-ap-Nsf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WXr-05-Y6j"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="WXr-05-Y6j" firstAttribute="trailing" secondItem="jUR-yg-Xvp" secondAttribute="trailing" id="5Sn-Ns-Cyl"/>
-                            <constraint firstItem="jUR-yg-Xvp" firstAttribute="top" secondItem="WXr-05-Y6j" secondAttribute="top" id="IOO-ZK-Y5Z"/>
-                            <constraint firstItem="jUR-yg-Xvp" firstAttribute="leading" secondItem="Jhv-Hu-hDP" secondAttribute="leading" id="pRq-tL-iou"/>
+                            <constraint firstItem="WXr-05-Y6j" firstAttribute="trailing" secondItem="ADl-ap-Nsf" secondAttribute="trailing" id="FLh-pY-PAu"/>
+                            <constraint firstItem="ADl-ap-Nsf" firstAttribute="top" secondItem="WXr-05-Y6j" secondAttribute="top" id="gZt-zq-Xgd"/>
+                            <constraint firstItem="ADl-ap-Nsf" firstAttribute="leading" secondItem="WXr-05-Y6j" secondAttribute="leading" id="gij-t0-Xj4"/>
+                            <constraint firstItem="WXr-05-Y6j" firstAttribute="bottom" secondItem="ADl-ap-Nsf" secondAttribute="bottom" id="r7Z-km-lvu"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
-                        <outlet property="searchBar" destination="jUR-yg-Xvp" id="lrr-hI-iW0"/>
+                        <outlet property="contentView" destination="ADl-ap-Nsf" id="r5v-cZ-vB3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zWA-sf-PGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -39,4 +41,9 @@
             <point key="canvasLocation" x="506" y="-223"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

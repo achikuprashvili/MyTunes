@@ -17,11 +17,11 @@ class ModelTranslator: ModelTranslatorProtocol {
     
     static func createTrackCellModel(from track: Track) -> TrackCellModel {
        
-        var result = TrackCellModel()
+        let result = TrackCellModel()
         result.trackName = track.trackName
         result.artistName = track.artistName
         result.artworkUrl100 = track.artworkUrl100
-        result.trackTimeMillis = track.trackTimeMillis
+        result.trackTimeSeconds = Double(track.trackTimeMillis) / 1000
         result.previewUrl = track.previewUrl
         result.trackId = track.trackId
         result.collectionName = track.collectionName

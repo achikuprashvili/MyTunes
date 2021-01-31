@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import MediaPlayer
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             coordinator.presentInitialScreen(on: UIWindow())
         }
+        
+        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, policy: AVAudioSession.RouteSharingPolicy.default, options: [.allowAirPlay])
         
         return true
     }

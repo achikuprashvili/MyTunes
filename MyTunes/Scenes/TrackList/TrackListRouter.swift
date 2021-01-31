@@ -39,7 +39,7 @@ class TrackListRouter: MVVMRouter {
         baseViewController = baseVC
         
         let vc = TrackListVC.instantiateFromStoryboard(storyboardName: "TrackList", storyboardId: "TrackListVC")
-        let viewModel = TrackListVM.init(with: self, iTunesManager: dependencies.iTunesManager)
+        let viewModel = TrackListVM.init(with: self, iTunesManager: dependencies.iTunesManager, musicPlayer: dependencies.musicPlayerManager)
         vc.viewModel = viewModel
         
         switch presentationContext {
@@ -57,7 +57,7 @@ class TrackListRouter: MVVMRouter {
             return
         }
         
-        guard let nc = baseViewController as? UINavigationController else {
+        guard let _ = baseViewController as? UINavigationController else {
             assertionFailure("The baseVC should be UINavigationController")
             return
         }

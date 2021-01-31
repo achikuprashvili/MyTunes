@@ -23,14 +23,16 @@ class BackendManager: BackendManagerProtocol {
         return Observable<Data>.create { observer in
             let request = AF.request(requestRouter)
             
-            request.validate().responseJSON { response in
-                self.parseResult(response: response).subscribe(onNext: { (data) in
-                    observer.onNext(data)
-                }, onError: { (error) in
-                    observer.onError(error)
-                }).disposed(by: self.disposeBag)
-//                print(response.result)
-            }
+            request
+                .validate()
+                .responseJSON { response in
+                    self.parseResult(response: response)
+                        .subscribe(onNext: { (data) in
+                            observer.onNext(data)
+                        }, onError: { (error) in
+                            observer.onError(error)
+                        }).disposed(by: self.disposeBag)
+                }
             
             return Disposables.create {
                 request.cancel()
@@ -40,18 +42,17 @@ class BackendManager: BackendManagerProtocol {
     
     func sendDecodableRequest<T>(requestRouter: RequestRouter) -> Observable<T> where T : Decodable {
         return Observable<T>.create { observer in
-            self.sendRequest(requestRouter: requestRouter).subscribe(onNext: { (jsonData) in
-                do {
-                    let decodedObject = try JSONDecoder().decode(T.self, from: jsonData)
-                    observer.onNext(decodedObject)
-                } catch {
-                    print(jsonData)
-                    print(error)
+            self.sendRequest(requestRouter: requestRouter)
+                .subscribe(onNext: { (jsonData) in
+                    do {
+                        let decodedObject = try JSONDecoder().decode(T.self, from: jsonData)
+                        observer.onNext(decodedObject)
+                    } catch {
+                        observer.onError(error)
+                    }
+                }, onError: { (error) in
                     observer.onError(error)
-                }
-            }, onError: { (error) in
-                observer.onError(error)
-            }).disposed(by: self.disposeBag)
+                }).disposed(by: self.disposeBag)
             
             return Disposables.create { }
         }
@@ -61,10 +62,10 @@ class BackendManager: BackendManagerProtocol {
         return Observable<Data>.create { observer in
             switch response.result {
             case .success(let value):
+                
                 guard let dict = value as? [String : Any] else {
                     observer.onError(NSError(domain: "parse error", code: 1, userInfo: nil))
-                    return Disposables.create {
-                    }
+                    return Disposables.create { }
                 }
             
                 do {
@@ -75,7 +76,6 @@ class BackendManager: BackendManagerProtocol {
                 }
                 
             case .failure(let error):
-                print(response.error)
                 observer.onError(error)
             }
             

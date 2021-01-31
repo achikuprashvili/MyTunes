@@ -12,11 +12,14 @@ import SDWebImage
 class TrackTableViewCell: UITableViewCell {
     
     static let cellIdentifier = "TrackTableViewCell"
-    private let disposeBag = DisposeBag()
+    private var disposeBag = DisposeBag()
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var trackName: UILabel!
     @IBOutlet weak var artistName: UILabel!
     @IBOutlet weak var albumName: UILabel!
+    @IBOutlet weak var playingIndicator: UIImageView!
+    
+    private weak var track: TrackCellModel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,7 +37,16 @@ class TrackTableViewCell: UITableViewCell {
         trackName.text = model.trackName
         albumName.text = model.collectionName
         thumbnail.sd_setImage(with: URL(string: model.artworkUrl100 ?? ""), completed: nil)
-        
+        model.isPlaying.bind { [weak self] value in
+            guard let strongself = self else {
+                return
+            }
+            strongself.playingIndicator.image = value ? UIImage(named: "Audio") : nil
+        }.disposed(by: disposeBag)
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        disposeBag = DisposeBag()
+    }
 }

@@ -9,7 +9,6 @@ import Foundation
 import Alamofire
 
 fileprivate enum ParameterKey: String {
-    case page
     case limit
     case term
     case media
@@ -18,7 +17,7 @@ fileprivate enum ParameterKey: String {
 
 enum ITunesRequestRouter: RequestRouter {
     
-    case getTrackList(artist: String, page: Int, limit: Int)
+    case getTrackList(artist: String, limit: Int)
     
     var method: HTTPMethod {
         
@@ -39,10 +38,9 @@ enum ITunesRequestRouter: RequestRouter {
     var parameters: Parameters? {
         
         switch self {
-        case .getTrackList(let artist, let page, let limit):
+        case .getTrackList(let artist, let limit):
             return [
                 ParameterKey.term.rawValue: artist.replacingOccurrences(of: " ", with: "+"),
-                ParameterKey.page.rawValue: page,
                 ParameterKey.limit.rawValue: limit,
                 ParameterKey.media.rawValue: "music",
                 ParameterKey.attribute.rawValue: "artistTerm"

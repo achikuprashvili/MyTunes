@@ -10,8 +10,10 @@ import UIKit
 
 struct AppDependencies {
     let iTunesManager: ITunesManagerProtocol
+    let musicPlayerManager: MusicPlayerManagerProtocol
     
     init(backendManager: BackendManager) {
         iTunesManager = ITunesManager(backendManager: backendManager)
+        musicPlayerManager = MusicPlayerManager()
     }
 }

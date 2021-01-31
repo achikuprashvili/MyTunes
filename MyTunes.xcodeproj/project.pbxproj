@@ -19,7 +19,6 @@
 		931157CD25B8C3A20001063D /* ITunesRequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931157CC25B8C3A20001063D /* ITunesRequestRouter.swift */; };
 		931157D025B8C3AE0001063D /* ITunesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931157CF25B8C3AE0001063D /* ITunesManager.swift */; };
 		9311581125B9B8F80001063D /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9311581025B9B8F80001063D /* Track.swift */; };
-		9311581A25B9D3CC0001063D /* TrackList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9311581625B9D3CC0001063D /* TrackList.storyboard */; };
 		9311581B25B9D3CC0001063D /* TrackListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9311581725B9D3CC0001063D /* TrackListRouter.swift */; };
 		9311581C25B9D3CC0001063D /* TrackListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9311581825B9D3CC0001063D /* TrackListVM.swift */; };
 		9311581D25B9D3CC0001063D /* TrackListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9311581925B9D3CC0001063D /* TrackListVC.swift */; };
@@ -32,6 +31,11 @@
 		9365DAFA25B4EDD80037DA5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9365DAF825B4EDD80037DA5E /* LaunchScreen.storyboard */; };
 		9391AE8625BCB17800F73D1F /* ModelTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391AE8525BCB17800F73D1F /* ModelTranslator.swift */; };
 		9391AE8925BCB1E900F73D1F /* TrackCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391AE8825BCB1E900F73D1F /* TrackCellModel.swift */; };
+		93A2A89C25C6FAF000C07D65 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A2A89B25C6FAF000C07D65 /* PlaceholderView.swift */; };
+		93BE6F4B25BFA1ED006533BC /* MusicPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BE6F4A25BFA1ED006533BC /* MusicPlayerView.swift */; };
+		93BE6F4F25BFA366006533BC /* TrackList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93BE6F4E25BFA366006533BC /* TrackList.storyboard */; };
+		93BE6F5325C5DEC5006533BC /* UISlider+RX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BE6F5225C5DEC5006533BC /* UISlider+RX.swift */; };
+		93FE681C25BD682A004F8848 /* MusicPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FE681B25BD682A004F8848 /* MusicPlayerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +51,6 @@
 		931157CC25B8C3A20001063D /* ITunesRequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesRequestRouter.swift; sourceTree = "<group>"; };
 		931157CF25B8C3AE0001063D /* ITunesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesManager.swift; sourceTree = "<group>"; };
 		9311581025B9B8F80001063D /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
-		9311581625B9D3CC0001063D /* TrackList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrackList.storyboard; sourceTree = "<group>"; };
 		9311581725B9D3CC0001063D /* TrackListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListRouter.swift; sourceTree = "<group>"; };
 		9311581825B9D3CC0001063D /* TrackListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListVM.swift; sourceTree = "<group>"; };
 		9311581925B9D3CC0001063D /* TrackListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListVC.swift; sourceTree = "<group>"; };
@@ -62,6 +65,11 @@
 		9365DAFB25B4EDD80037DA5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9391AE8525BCB17800F73D1F /* ModelTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTranslator.swift; sourceTree = "<group>"; };
 		9391AE8825BCB1E900F73D1F /* TrackCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCellModel.swift; sourceTree = "<group>"; };
+		93A2A89B25C6FAF000C07D65 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		93BE6F4A25BFA1ED006533BC /* MusicPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerView.swift; sourceTree = "<group>"; };
+		93BE6F4E25BFA366006533BC /* TrackList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TrackList.storyboard; sourceTree = "<group>"; };
+		93BE6F5225C5DEC5006533BC /* UISlider+RX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISlider+RX.swift"; sourceTree = "<group>"; };
+		93FE681B25BD682A004F8848 /* MusicPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerManager.swift; sourceTree = "<group>"; };
 		BE2C973B3B94D61059FB213A /* Pods-MyTunes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTunes.debug.xcconfig"; path = "Target Support Files/Pods-MyTunes/Pods-MyTunes.debug.xcconfig"; sourceTree = "<group>"; };
 		F55B30BD0D1B184AF508BCD9 /* Pods_MyTunes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTunes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -100,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				9306513A25B8BF5700C7D8C6 /* UIViewController+Extension.swift */,
+				93BE6F5225C5DEC5006533BC /* UISlider+RX.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -118,6 +127,7 @@
 				930AA1B725B4F7DE00B2C6E7 /* AppDependencies.swift */,
 				930AA1BB25B4F82900B2C6E7 /* BackendManager.swift */,
 				930AA1BE25B4F83200B2C6E7 /* RequestRouter.swift */,
+				93FE681A25BD6809004F8848 /* MusicPlayer */,
 				931157CB25B8C3860001063D /* iTunesManager */,
 			);
 			path = Dependencies;
@@ -129,6 +139,7 @@
 				9306513925B8BF4300C7D8C6 /* Extensions */,
 				934E4F6B25B4FA8300CE8392 /* Constants.swift */,
 				9306512E25B8BEC700C7D8C6 /* MVVMBaseProtocols */,
+				93A2A89B25C6FAF000C07D65 /* PlaceholderView.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -146,10 +157,10 @@
 			isa = PBXGroup;
 			children = (
 				9311581F25BB6DD30001063D /* View */,
-				9311581625B9D3CC0001063D /* TrackList.storyboard */,
 				9311581725B9D3CC0001063D /* TrackListRouter.swift */,
 				9311581825B9D3CC0001063D /* TrackListVM.swift */,
 				9311581925B9D3CC0001063D /* TrackListVC.swift */,
+				93BE6F4E25BFA366006533BC /* TrackList.storyboard */,
 			);
 			path = TrackList;
 			sourceTree = "<group>";
@@ -159,6 +170,7 @@
 			children = (
 				9311582425BB6E140001063D /* TrackTableViewCell.swift */,
 				9311582525BB6E140001063D /* TrackTableViewCell.xib */,
+				93BE6F4A25BFA1ED006533BC /* MusicPlayerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,6 +218,14 @@
 				9391AE8525BCB17800F73D1F /* ModelTranslator.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		93FE681A25BD6809004F8848 /* MusicPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				93FE681B25BD682A004F8848 /* MusicPlayerManager.swift */,
+			);
+			path = MusicPlayer;
 			sourceTree = "<group>";
 		};
 		D036D6D165BED23F1262CF0C /* Pods */ = {
@@ -276,7 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9311581A25B9D3CC0001063D /* TrackList.storyboard in Resources */,
+				93BE6F4F25BFA366006533BC /* TrackList.storyboard in Resources */,
 				9365DAFA25B4EDD80037DA5E /* LaunchScreen.storyboard in Resources */,
 				9365DAF725B4EDD80037DA5E /* Assets.xcassets in Resources */,
 				9311582725BB6E140001063D /* TrackTableViewCell.xib in Resources */,
@@ -333,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9311581C25B9D3CC0001063D /* TrackListVM.swift in Sources */,
+				93FE681C25BD682A004F8848 /* MusicPlayerManager.swift in Sources */,
 				9391AE8925BCB1E900F73D1F /* TrackCellModel.swift in Sources */,
 				9311581D25B9D3CC0001063D /* TrackListVC.swift in Sources */,
 				930AA1B825B4F7DE00B2C6E7 /* AppDependencies.swift in Sources */,
@@ -340,10 +361,12 @@
 				9311581B25B9D3CC0001063D /* TrackListRouter.swift in Sources */,
 				9306513725B8BEE800C7D8C6 /* MVVMViewModel.swift in Sources */,
 				930AA1BC25B4F82900B2C6E7 /* BackendManager.swift in Sources */,
+				93BE6F4B25BFA1ED006533BC /* MusicPlayerView.swift in Sources */,
 				930AA1BF25B4F83200B2C6E7 /* RequestRouter.swift in Sources */,
 				9391AE8625BCB17800F73D1F /* ModelTranslator.swift in Sources */,
 				9311581125B9B8F80001063D /* Track.swift in Sources */,
 				9306513B25B8BF5700C7D8C6 /* UIViewController+Extension.swift in Sources */,
+				93A2A89C25C6FAF000C07D65 /* PlaceholderView.swift in Sources */,
 				9365DAEE25B4EDD70037DA5E /* AppDelegate.swift in Sources */,
 				9365DAF025B4EDD70037DA5E /* SceneDelegate.swift in Sources */,
 				9306513425B8BEE000C7D8C6 /* MVVMViewController.swift in Sources */,
@@ -351,6 +374,7 @@
 				930AA1C225B4F84800B2C6E7 /* Coordinator.swift in Sources */,
 				934E4F6C25B4FA8300CE8392 /* Constants.swift in Sources */,
 				931157CD25B8C3A20001063D /* ITunesRequestRouter.swift in Sources */,
+				93BE6F5325C5DEC5006533BC /* UISlider+RX.swift in Sources */,
 				9306513025B8BED600C7D8C6 /* MVVMRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,7 +518,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8F4FHA58FA;
 				INFOPLIST_FILE = MyTunes/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				INSTALL_GROUP = Personal;
+				INSTALL_OWNER = "Archil Kuprashvili";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -502,7 +528,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.archil.MyTunes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -515,7 +541,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8F4FHA58FA;
 				INFOPLIST_FILE = MyTunes/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				INSTALL_GROUP = Personal;
+				INSTALL_OWNER = "Archil Kuprashvili";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -523,7 +551,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.archil.MyTunes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
