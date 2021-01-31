@@ -89,13 +89,21 @@ class TrackListVC: UIViewController, MVVMViewController {
         searchBar.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         searchBar.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         
-        searchBar.rx.searchButtonClicked.subscribe { (_) in
-            self.searchBar.endEditing(true)
-        }.disposed(by: disposeBag)
+        searchBar
+            .rx
+            .searchButtonClicked
+            .subscribe { (_) in
+                self.searchBar.endEditing(true)
+            }.disposed(by: disposeBag)
         
-        searchBar.rx.text.orEmpty.debounce(.milliseconds(500), scheduler: MainScheduler.asyncInstance).bind { (artist) in
-            self.viewModel.getTracks(for: artist)
-        }.disposed(by: disposeBag)
+        searchBar
+            .rx
+            .text
+            .orEmpty
+            .distinctUntilChanged()
+            .debounce(.milliseconds(500), scheduler: MainScheduler.asyncInstance).bind { (artist) in
+                self.viewModel.getTracks(for: artist)
+            }.disposed(by: disposeBag)
     }
     
     func setupObservers() {
@@ -183,6 +191,9 @@ class TrackListVC: UIViewController, MVVMViewController {
     }
     
     func showTableView() {
+        guard tableView.superview == nil else {
+            return
+        }
         noResultsPlaceholder.removeFromSuperview()
         typeToSearchPlaceholder.removeFromSuperview()
         activityIndicator.removeFromSuperview()

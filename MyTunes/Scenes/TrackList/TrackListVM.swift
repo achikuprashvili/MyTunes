@@ -26,7 +26,7 @@ class TrackListVM: MVVMViewModel {
     let router: MVVMRouter
     
     var tracks: PublishSubject<[TrackCellModel]> = PublishSubject<[TrackCellModel]>.init()
-    var screenState: BehaviorSubject<TrackListScreenState> = BehaviorSubject<TrackListScreenState>.init(value: .loading)
+    var screenState: BehaviorSubject<TrackListScreenState> = BehaviorSubject<TrackListScreenState>.init(value: .empty)
     var selectRow: PublishSubject<(IndexPath, TrackCellModel)> = PublishSubject<(IndexPath, TrackCellModel)>.init()
     
     private let iTunesManager: ITunesManagerProtocol
